@@ -3,9 +3,6 @@ package Pizzeria;
 public class LinkedList {
     public Node root;
 
-    public LinkedList(){
-    }
-
     public void add(int num){
         Node a = new Node(num);
         if (root == null) {

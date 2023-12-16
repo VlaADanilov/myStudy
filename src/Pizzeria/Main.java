@@ -9,9 +9,13 @@ public class Main {
         Client three = new Client("Наташа", Gender.Woman, 23, CategoryDiscount.Basic);
         Client four = new Client("Тётя Клава", Gender.Woman, 73, CategoryDiscount.Pensioner);
 
+        System.out.println(one);
+
         Chef chef1 = new Chef("Ахмед", Gender.Man, 42, 18);
         Chef chef2 = new Chef("Мария", Gender.Woman, 28, 5);
         Chef chef3 = new Chef("Денис", Gender.Man, 21, 1);
+
+        System.out.println(chef1);
 
         Order order1 = Order.makeOrder(one, chef1, "11:20",issuea.next(),TypesPizza.Beach);
         Order order2 = Order.makeOrder(one, chef2, "11:40",issuea.next(),TypesPizza.Meet);

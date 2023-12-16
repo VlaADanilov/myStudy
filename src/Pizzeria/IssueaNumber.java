@@ -11,15 +11,11 @@ public class IssueaNumber implements GiveNumber {
             list.add(i);
         }
         list.close();
+        nowNum = list.root;
     }
 
     public int next() {
-        if (nowNum==null){
-            nowNum = list.root;
-        }
-        else {
-            nowNum = nowNum.next;
-        }
+        nowNum = nowNum.next;
         return nowNum.getNumber();
     }
 }
