@@ -17,8 +17,15 @@ public class Order {
         this.type = type;
     }
 
-    public static Order makeOrder(Client client, Chef chef, String time, int number,TypesPizza type){
-        return new Order(client,chef,time,number,type);
+    public static Order makeOrder(Client client, Chef chef, String time, int number,TypesPizza type) throws NumbersExceptionОбр{
+        Order order = new Order(client,chef,time,number,type);
+        if(OrdersWithStatus.вОбработке[number-1]!=null){
+            throw new NumbersExceptionОбр();
+        }
+        else{
+            OrdersWithStatus.вОбработке[number-1]=order;
+        }
+        return order;
     }
 
     public String toString(){
@@ -32,7 +39,30 @@ public class Order {
         return ret;
     }
 
-    public void setStatus(Status status){
-        this.status = status;
+    public void updateStatus() throws NumberExceptionГотовится, NumberExceptionГотов{
+        if(status==Status.Обработка){
+            if(OrdersWithStatus.готовятся[number-1]!=null){
+                throw new NumberExceptionГотовится();
+            }
+            else{
+                OrdersWithStatus.готовятся[number-1]=OrdersWithStatus.вОбработке[number-1];
+                OrdersWithStatus.вОбработке[number-1]=null;
+            }
+            status=Status.Готовится;
+        }
+        if(status==Status.Готовится){
+            if(OrdersWithStatus.готовы[number-1]!=null){
+                throw new NumberExceptionГотов();
+            }
+            else{
+                OrdersWithStatus.готовы[number-1]=OrdersWithStatus.готовятся[number-1];
+                OrdersWithStatus.готовятся[number-1]=null;
+            }
+            status=Status.Готовится;
+        }
+        if(status==Status.Готов){
+            OrdersWithStatus.готовы[number-1]=null;
+            status=Status.Выдан;
+        }
     }
 }
