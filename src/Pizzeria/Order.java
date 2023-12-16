@@ -34,7 +34,7 @@ public class Order {
         ret += "Заказ готовит " + chef.getName() +'\n';
         ret += "Заказ сделан в такое время: " + time +'\n';
         ret += "Номер заказа " + number +'\n';
-        ret += "Стату заказа " + status +'\n';
+        ret += "Статус заказа " + status +'\n';
         ret += "Пицца " + type +'\n';
         return ret;
     }
@@ -49,6 +49,7 @@ public class Order {
                 OrdersWithStatus.вОбработке[number-1]=null;
             }
             status=Status.Готовится;
+            return;
         }
         if(status==Status.Готовится){
             if(OrdersWithStatus.готовы[number-1]!=null){
@@ -58,7 +59,8 @@ public class Order {
                 OrdersWithStatus.готовы[number-1]=OrdersWithStatus.готовятся[number-1];
                 OrdersWithStatus.готовятся[number-1]=null;
             }
-            status=Status.Готовится;
+            status=Status.Готов;
+            return;
         }
         if(status==Status.Готов){
             OrdersWithStatus.готовы[number-1]=null;

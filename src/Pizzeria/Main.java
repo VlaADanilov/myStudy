@@ -16,6 +16,7 @@ public class Main {
 
 
         Order order1 = Order.makeOrder(one, chef1, "11:20",issuea.next(),TypesPizza.Beach);
+        order1.updateStatus();
         Order order2 = Order.makeOrder(one, chef2, "11:40",issuea.next(),TypesPizza.Meet);
         Order order3 = Order.makeOrder(two, chef1, "13:00",issuea.next(),TypesPizza.Cheese);
         Order order4 = Order.makeOrder(two, chef1, "7:50",issuea.next(),TypesPizza.Beach);
@@ -26,10 +27,14 @@ public class Main {
         Order order9 = Order.makeOrder(two, chef2, "12:56",issuea.next(),TypesPizza.Beach);
         Order order10 = Order.makeOrder(three, chef3, "13:13",issuea.next(),TypesPizza.Meet);
         Order order11 = Order.makeOrder(three, chef1, "9:42",issuea.next(),TypesPizza.Beach);
-        Order order12 = Order.makeOrder(three, chef1, "20:28",issuea.next(),TypesPizza.Cheese);
-        Order order13 = Order.makeOrder(four, chef2, "10:37",issuea.next(),TypesPizza.Meet);
-        Order order14 = Order.makeOrder(four, chef2, "9:38",issuea.next(),TypesPizza.Cheese);
-        Order order15 = Order.makeOrder(four, chef1, "18:53",issuea.next(),TypesPizza.Beach);
+        order1.updateStatus();
+        order11.updateStatus();
+        order1.updateStatus();
+        order11.updateStatus();
+        //Order order12 = Order.makeOrder(three, chef1, "20:28",issuea.next(),TypesPizza.Cheese);
+        //Order order13 = Order.makeOrder(four, chef2, "10:37",issuea.next(),TypesPizza.Meet);
+        //Order order14 = Order.makeOrder(four, chef2, "9:38",issuea.next(),TypesPizza.Cheese);
+        //Order order15 = Order.makeOrder(four, chef1, "18:53",issuea.next(),TypesPizza.Beach);
 
     }
 }
