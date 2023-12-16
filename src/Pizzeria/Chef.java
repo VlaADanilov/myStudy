@@ -10,7 +10,7 @@ public class Chef extends Person{
 
     @Override
     public String toString() {
-        return "Повар " + name + ". Возраст - " + age + ", стаж - " + experience + ". Его пол " + gender ;
+        return "Повар " + name + ". Возраст - " + age + " лет , стаж - " + experience + " лет. Его пол " + gender ;
     }
 
     public int getExperience() {

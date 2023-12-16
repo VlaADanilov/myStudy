@@ -21,7 +21,7 @@ public class Client extends Person {
     @Override
     public String toString() {
         return "Клиент " + name + " . Клиенту " + age + " лет. " + "Пол клиента - " + gender
-                + ". Скидка клиента - " + discount + ". Потому что он " + categoryDiscount + ".";
+                + ". Скидка клиента - " + (int)(discount*100) + "%. Потому что он " + categoryDiscount + ".";
     }
 
     public CategoryDiscount getCategoryDiscount() {
