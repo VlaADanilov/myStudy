@@ -2,7 +2,7 @@ package stok1;
 
 public class Main {
     public static void main(String[] args){
-
+        System.out.println("555");
     }
     public static boolean inThere(int[] numbers, int[][] digits){
         int countForCheck = 0;
